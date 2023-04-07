@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "ae854f7b-bdd7-4f8d-b860-35b93b342b09",
+		"name": "Cart service API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{cartServiceAPI}}/ping",
+					"host": [
+						"{{cartServiceAPI}}"
+					],
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cart",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"aeab9183-4f58-4844-8438-afa924777ce7\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cartServiceAPI}}/api/profile/cart",
+					"host": [
+						"{{cartServiceAPI}}"
+					],
+					"path": [
+						"api",
+						"profile",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cart",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"aeab9183-4f58-4844-8438-afa924777ce7\",\n    \"items\": [\n        {\n            \"product\": {\n                \"id\": \"f7971e9a-e07a-4ee0-8f83-5645a9b65e6c\"\n            },\n            \"count\": 1\n        },\n        {\n            \"product\": {\n                \"id\": \"7cc83f34-62b3-4bed-993e-696279997682\"\n            },\n            \"count\": 1\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cartServiceAPI}}/api/profile/cart",
+					"host": [
+						"{{cartServiceAPI}}"
+					],
+					"path": [
+						"api",
+						"profile",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"aeab9183-4f58-4844-8438-afa924777ce7\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cartServiceAPI}}/api/profile/cart",
+					"host": [
+						"{{cartServiceAPI}}"
+					],
+					"path": [
+						"api",
+						"profile",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cart/checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"aeab9183-4f58-4844-8438-afa924777ce7\",\n    \"payment\": {\n        \"type\": \"payment-type-1\",\n        \"address\": \"billing-address\",\n        \"creditCard\": \"credit-card-info\"\n    },\n    \"delivery\": {\n        \"type\": \"delivery-type-1\",\n        \"address\": \"delivery-address\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cartServiceAPI}}/api/profile/cart/checkout",
+					"host": [
+						"{{cartServiceAPI}}"
+					],
+					"path": [
+						"api",
+						"profile",
+						"cart",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
